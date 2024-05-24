@@ -1,5 +1,3 @@
-const ytdl = require('ytdl-core');
-
 // Usage
 document.getElementById('link').addEventListener('input', function(e) {
     var url = e.target.value;
@@ -12,28 +10,20 @@ document.getElementById('link').addEventListener('input', function(e) {
     }
 });
 
-function isValidYoutubeLink(url) {
-    const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;
-    return pattern.test(url);
-}
+const fs = require('fs');
+const ytdl = require('ytdl-core');
 
-// Usage
-document.getElementById('link').addEventListener('input', function(e) {
-    const url = e.target.value;
-    if (isValidYoutubeLink(url)) {
-        console.log('Valid YouTube link');
-        // Perform actions for a valid link
-        // Example: Fetch video info
-        ytdl.getInfo(url, (err, info) => {
-            if (err) {
-                console.error('Error fetching video info:', err);
-            } else {
-                console.log('Video title:', info.title);
-                console.log('Video author:', info.author.name);
-            }
-        });
-    } else {
-        console.log('Invalid YouTube link');
-        // Perform actions for an invalid link
-    }
-});
+const options = {
+    // Specify your desired options here
+    range: { start: 10355705, end: 12452856 }, // Example byte range
+    begin: '1:30', // Example start time
+    liveBuffer: 20000, // Example live buffer time (in milliseconds)
+    highWaterMark: 1024 * 512, // Example highWaterMark (512KB)
+    dlChunkSize: 10 * 1024 * 1024, // Example chunk size (10MB)
+    IPv6Block: '2001:db8::/32', // Example IPv6 block
+};
+
+const videoUrl = 'http://www.youtube.com/watch?v=aqz-KE-bpKQ';
+
+ytdl(videoUrl, options)
+    .pipe(fs.createWriteStream('video.mp4'));
