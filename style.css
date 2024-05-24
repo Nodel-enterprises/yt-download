@@ -1,0 +1,56 @@
+body{
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open sans';
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 60%;
+    background-color: #1F1B24;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+}
+
+#link{
+    background-color: #211b24;
+    border: 1px solid gray;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    margin: 8px;
+    width: 60%;
+    text-align: center;
+    font-size: 32px;
+}
+
+#qualityselector{
+    display: none;
+}
+
+#download-btn{
+    background-color: #211b24;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    margin: 8px;
+    width: 60%;
+    text-align: center;
+    font-size: 32px;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Open sans';
+    src: url('fonts/Open\ sans/OpenSans-Regular.ttf');
+}
