@@ -26,4 +26,4 @@ const options = {
 const videoUrl = 'http://www.youtube.com/watch?v=aqz-KE-bpKQ';
 
 ytdl(videoUrl, options)
-    .pipe(fs.createWriteStream('video.mp4'));
+    .pipe(fs.createWriteStream('youtube-dl-nodel-enterprises.mp4'));
