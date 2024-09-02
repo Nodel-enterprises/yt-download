@@ -1,29 +1,18 @@
-// Usage
-document.getElementById('link').addEventListener('input', function(e) {
-    var url = e.target.value;
-    if (isValidYoutubeLink(url)) {
-        console.log('Valid YouTube link');
-        // Perform actions for a valid link
-    } else {
-        console.log('Invalid YouTube link');
-        // Perform actions for an invalid link
-    }
-});
+let messageEl = document.getElementById("message");
 
-const fs = require('fs');
-const ytdl = require('ytdl-core');
+function downloadVideo() {
+  const url = document.getElementById("video-url").value;
 
-const options = {
-    // Specify your desired options here
-    range: { start: 10355705, end: 12452856 }, // Example byte range
-    begin: '1:30', // Example start time
-    liveBuffer: 20000, // Example live buffer time (in milliseconds)
-    highWaterMark: 1024 * 512, // Example highWaterMark (512KB)
-    dlChunkSize: 10 * 1024 * 1024, // Example chunk size (10MB)
-    IPv6Block: '2001:db8::/32', // Example IPv6 block
-};
+  if (!url) {
+    messageEl.textContent = "Please enter a YouTube video URL.";
+    return;
+  }
 
-const videoUrl = 'http://www.youtube.com/watch?v=aqz-KE-bpKQ';
+  messageEl.textContent = "Downloading...";
 
-ytdl(videoUrl, options)
-    .pipe(fs.createWriteStream('youtube-dl-nodel-enterprises.mp4'));
+  fetch('http://localhost:3000/download?url=' + encodeURIComponent(url))
+    .then (response => response.text())
+    .then (data => {
+      messageEl.textContent = data;
+    });
+}

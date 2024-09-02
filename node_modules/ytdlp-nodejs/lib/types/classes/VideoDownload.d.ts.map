@@ -1,1 +1,0 @@
-{"version":3,"file":"VideoDownload.d.ts","sourceRoot":"","sources":["../../../src/classes/VideoDownload.ts"],"names":[],"mappings":"AAAA,OAAO,YAAY,MAAM,gBAAgB,CAAC;AAC1C,OAAO,EAAE,eAAe,EAAE,MAAM,gBAAgB,CAAC;AAUjD,cAAM,aAAc,SAAQ,YAAY;gBACxB,GAAG,EAAE,MAAM,EAAE,OAAO,CAAC,EAAE,eAAe,CAAC,GAAG,CAAC;IA8DvD,OAAO,CAAC,SAAS;CAgEpB;AAED,eAAe,aAAa,CAAC"}
