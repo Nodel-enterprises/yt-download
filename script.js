@@ -10,9 +10,10 @@ function downloadVideo() {
 
   messageEl.textContent = "Downloading...";
 
-  fetch('http://localhost:3000/download?url=' + encodeURIComponent(url))
+  fetch('http://s4.phntmhosting.xyz:3000/download?url=' + encodeURIComponent(url))
     .then (response => response.text())
     .then (data => {
       messageEl.textContent = data;
     });
 }
+//nødels
