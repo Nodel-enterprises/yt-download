@@ -151,7 +151,7 @@ button:hover {
         margin: 8px;
         width: 60%;
         text-align: center;
-        font-size: 32px;
+        font-size: 4vw;
     }
     
     #qualityselector{
@@ -166,7 +166,7 @@ button:hover {
         margin: 8px;
         width: 60%;
         text-align: center;
-        font-size: 32px;
+        font-size: 4vw;
     }
     
     #error-message{
@@ -177,7 +177,7 @@ button:hover {
         margin: 8px;
         width: 60%;
         text-align: center;
-        font-size: 32px;
+        font-size: 4vw;
     }
     
     input[type="text"] {
@@ -224,6 +224,12 @@ button:hover {
         transition: width 0.2s;
     }
 
+
+
+    @font-face {
+        font-family: 'Open sans';
+        src: url('fonts/Open\ sans/OpenSans-Regular.ttf');
+    }
 
     }
   }
