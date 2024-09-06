@@ -8,6 +8,12 @@ body{
     font-family: 'Open sans';
 }
 
+.header{
+display: flex;
+flex-direction: row;
+}
+
+
 .container{
     display: flex;
     flex-direction: column;
