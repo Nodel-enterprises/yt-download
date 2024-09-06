@@ -140,7 +140,7 @@ body{
     width: 60%;
     background-color: #1F1B24;
     border-radius: 8px;
-    padding: 8vw;
+    padding: 4vw;
     margin: 8px;
 }
 
@@ -184,7 +184,7 @@ body{
 
 input[type="text"] {
     width: 80%;
-    padding: 2px;
+    padding: 2vw;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
