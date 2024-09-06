@@ -17,7 +17,7 @@ body{
     width: 60%;
     background-color: #1F1B24;
     border-radius: 8px;
-    padding: 8vw;
+    padding: 8px;
     margin: 8px;
 }
 
@@ -26,7 +26,7 @@ body{
     border: 1px solid gray;
     border-radius: 8px;
     color: white;
-    padding: 8vw;
+    padding: 8px;
     margin: 8px;
     width: 60%;
     text-align: center;
@@ -41,7 +41,7 @@ body{
     background-color: #211b24;
     border-radius: 8px;
     color: white;
-    padding: 8vw;
+    padding: 8px;
     margin: 8px;
     width: 60%;
     text-align: center;
@@ -52,7 +52,7 @@ body{
     background-color: #f54242;
     border-radius: 8px;
     color: black;
-    padding: 8vw;
+    padding: 8px;
     margin: 8px;
     width: 60%;
     text-align: center;
@@ -61,7 +61,7 @@ body{
 
 input[type="text"] {
     width: 80%;
-    padding: 10vw;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -111,5 +111,117 @@ button:hover {
 }
 
 
+/*make site responsive for mobile u 600px*/
 
-@media 
+
+@media screen and (max-width: 600px) {
+    body {
+      background-color: blue;
+    }
+  }
+
+
+body{
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open sans';
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 60%;
+    background-color: #1F1B24;
+    border-radius: 8px;
+    padding: 8vw;
+    margin: 8px;
+}
+
+#link{
+    background-color: #211b24;
+    border: 1px solid gray;
+    border-radius: 8px;
+    color: white;
+    padding: 8vw;
+    margin: 8px;
+    width: 60%;
+    text-align: center;
+    font-size: 32px;
+}
+
+#qualityselector{
+    display: none;
+}
+
+#download-btn{
+    background-color: #211b24;
+    border-radius: 8px;
+    color: white;
+    padding: 8vw;
+    margin: 8px;
+    width: 60%;
+    text-align: center;
+    font-size: 32px;
+}
+
+#error-message{
+    background-color: #f54242;
+    border-radius: 8px;
+    color: black;
+    padding: 3vw;
+    margin: 8px;
+    width: 60%;
+    text-align: center;
+    font-size: 32px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a296fc;
+}
+
+#message {
+    margin-top: 10px;
+}
+
+#progress {
+    width: 80%;
+    margin: 20px auto;
+    padding: 5vw;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    height: 20px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: width 0.2s;
+}
