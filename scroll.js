@@ -1,3 +1,4 @@
+console.log('scroll.js successfully loaded!');
 // Import knappen
 const goUpBtn = document.getElementById("goUpBtn");
 

@@ -1,3 +1,4 @@
+console.log('script.js successfully loaded!');
 let messageEl = document.getElementById("message");
 
 function downloadVideo() {

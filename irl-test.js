@@ -1,3 +1,4 @@
+console.log('irl-test.js successfully loaded!');
 const assert = require('assert');
 const nock = require('nock');
 const ytdl = require('..');
@@ -11,6 +12,7 @@ const videos = {
   Offensive: 'hCKDsjLt_qU',
   'Live broadcast': '5qap5aO4i9A',
 };
+
 
 
 process.env.YTDL_NO_UPDATE = 'true';
