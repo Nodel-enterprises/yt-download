@@ -1,4 +1,4 @@
-console.log('irl-test.js successfully loaded!');
+console.log('irl-test.js. successfully loaded!');
 const assert = require('assert');
 const nock = require('nock');
 const ytdl = require('..');
