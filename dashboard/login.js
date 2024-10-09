@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "user" && password === "web_dev") {
-        alert("You have successfully logged in.");
+        alert("Login successful! Redirecting...");
         location.reload();
     } else {
         loginErrorMsg.style.opacity = 1;
