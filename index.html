@@ -40,7 +40,7 @@
     </div>
 
     <div class="container">
-        <p>supported platforms: (06.09.24)</p>
+        <p>supported platforms: </p><div id="time"></div>
         <img src="/img/youtube.png" alt="">
                 </div>
 
@@ -57,6 +57,9 @@
                         </form>
                         
                             </div>
+                            <script>
+                                setInterval(function(){ document.getElementById('time').innerText = new Date()}, 1000);
+                            </script>
 
                             
     <script src="bundle.js"></script>
