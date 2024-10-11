@@ -40,7 +40,7 @@
     </div>
 
     <div class="container">
-        <p>supported platforms as of: </p><div id="time"></div>
+        <p>supported platforms as of: </p><div id="date"></div>
         <img src="/img/youtube.png" alt="">
                 </div>
 
@@ -57,9 +57,16 @@
                         </form>
                         
                             </div>
-                            <script>
-                                setInterval(function(){ document.getElementById('time').innerText = new Date()}, 1000);
-                            </script>
+                            <script> 
+                                // Get the current date 
+                                const today = new Date(); 
+                                 
+                                // Format the date to YYYY-MM-DD 
+                                const formattedDate = today.toISOString().split('T')[0]; 
+                         
+                                // Set the value of the date input to the current date 
+                                document.getElementById('date').value = formattedDate; 
+                            </script> 
 
                             
     <script src="bundle.js"></script>
