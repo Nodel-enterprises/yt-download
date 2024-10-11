@@ -40,7 +40,7 @@
     </div>
 
     <div class="container">
-        <p>supported platforms as of: </p><div id="date"></div>
+        <p>supported platforms as of: </p><span id="datetime-display"></span>
         <img src="/img/youtube.png" alt="">
                 </div>
 
@@ -57,16 +57,21 @@
                         </form>
                         
                             </div>
-                            <script> 
-                                // Get the current date 
-                                const today = new Date(); 
-                                 
-                                // Format the date to YYYY-MM-DD 
-                                const formattedDate = today.toISOString().split('T')[0]; 
-                         
-                                // Set the value of the date input to the current date 
-                                document.getElementById('date').value = formattedDate; 
-                            </script> 
+                            
+                            <script>
+                                // Function to display current date and time
+                                const datetimeDisplayElement = document.getElementById("datetime-display");
+                            
+                                // Create a new Date object
+                                const currentDateTime = new Date();
+                            
+                                // Extract the date and time components
+                                const date = currentDateTime.toDateString();
+                                const time = currentDateTime.toLocaleTimeString();
+                            
+                                // Display the date and time in the span element
+                                datetimeDisplayElement.textContent = `Current Date: ${date} | Current Time: ${time}`;
+                            </script>
 
                             
     <script src="bundle.js"></script>
