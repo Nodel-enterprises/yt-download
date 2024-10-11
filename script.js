@@ -11,7 +11,7 @@ function downloadVideo() {
 
   messageEl.textContent = "Downloading...";
 
-  fetch('https://46.9.205.48:3000/download?url=' + encodeURIComponent(url))
+  fetch('https://s1.phntmhosting.xyz:3000/download?url=' + encodeURIComponent(url))
     .then (response => response.text())
     .then (data => {
       messageEl.textContent = data;
