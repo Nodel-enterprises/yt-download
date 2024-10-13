@@ -13,7 +13,7 @@ app.get('/download', async (req, res) => {
   if (!url) {
     return res.status(400).send('URL is required');
   }
-
+  
   downloadProgress[clientId] = 0;
 
   try{
