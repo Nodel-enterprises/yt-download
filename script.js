@@ -11,7 +11,7 @@ function downloadVideo() {
 
   messageEl.textContent = "Downloading...";
 
-  fetch('http://144.126.140.60:3000/download?url=' + encodeURIComponent(url))
+  fetch('https://144.126.140.60:3000/download?url=' + encodeURIComponent(url))
     .then (response => response.text())
     .then (data => {
       messageEl.textContent = data;
