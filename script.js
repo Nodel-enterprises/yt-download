@@ -11,12 +11,17 @@ function downloadVideo() {
 
   messageEl.textContent = "Downloading...";
 
-  fetch('https://144.126.140.60:3000/download?url=' + encodeURIComponent(url))
-    .then (response => response.text())
-    .then (data => {
+  fetch('http://s1.phntmhosting.xyz:6909/download?url=' + encodeURIComponent(url))
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.statusText);
+      }
+      return response.text();
+    })
+    .then(data => {
       messageEl.textContent = data;
+    })
+    .catch(error => {
+      messageEl.textContent = "Error: " + error.message;
     });
 }
-
-
-
