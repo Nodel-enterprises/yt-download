@@ -1,8 +1,14 @@
 const express = require('express');
-const app = express();
+const fs = require('fs');
+const cors = require('cors');
 const youtubedl = require('youtube-dl-exec');
-const logger = require('progress-estimator')()
-const port = 3000;
+const logger = require('progress-estimator')();
+const port = 6909;
+
+app.use(cors()); 
+
+const app = express();
+const downloadProgress = {}; // Initialize download progress tracking
 
 app.use(express.static('downloads'));
 
@@ -13,20 +19,29 @@ app.get('/download', async (req, res) => {
   if (!url) {
     return res.status(400).send('URL is required');
   }
-  
+
   downloadProgress[clientId] = 0;
 
-  try{
+  try {
     const filePath = `downloads/${url.split('/').pop()}_${Date.now()}.mp4`;
-    const promise = youtubedl(url, { dumpSingleJson: true })
-    const result = await logger(promise, `Obtaining url: ${url}`)
-  }
-  catch(err){
-    console.log(err)
-  }
 
-})
+    // Set up the download promise
+    const promise = youtubedl(url, {
+      output: filePath,
+      dumpSingleJson: true,
+    });
+
+    // Log download progress
+    await logger(promise, `Obtaining URL: ${url}`);
+
+    // After download, send success response
+    res.send({ message: 'Download completed', filePath });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('An error occurred while downloading the file.');
+  }
+});
 
 app.listen(port, () => {
-  console.log(`Server listening at https//s1.phntmhosting.xyz:${port}`);
-})
+  console.log(`Server listening at https://s1.phntmhosting.xyz:${port}`);
+});
