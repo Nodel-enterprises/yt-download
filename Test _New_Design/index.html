@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube-downloader</title>
+    <link rel="stylesheet" href="/dashboard/dash.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Youtube-downloader</h1>
+        <form action="/dashboard/download" method="POST">
+            <input type="text" name="url" placeholder="Enter YouTube video URL">
+            <button type="submit">Download</button>
+        </form>
+        <h2>Available Downloads</h2>
+        <ul>
+            {% for video in videos %}
+                <li><a href="{{ video }}">{{ video }}</a></li>
+            {% endfor %}
+        </ul>
+        <form action="/dashboard/delete" method="POST">
+            <input type="text" name="filename" placeholder="Enter filename to delete">
+            <button type="submit">Delete</button>
+            <p>Note: Deleting a file will remove it from the server.</p>
+            <p>Please make sure to download the files before deleting them.</p>
+            <p>Warning: This action cannot be undone.</p>
+            <p>To download files, click on the links provided in the available downloads section.</p>
+            <p>To upload new files, click on the "Upload Files" button below.</p>
+            <form action="/dashboard/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" multiple>
+                <button type="submit">Upload Files</button>
+    
+                {% if error %}
+                    <p>{{ error }}</p>
+                {% endif %}
+    
+                {% if success %}
+                    <p>{{ success }}</p>
+                {% endif %}
+    
+                <p>Supported file types: mp4, mkv, avi</p>
+    
+                <p>Maximum file size: None 🛳️</p>
+    
+                <p>Please ensure that the files you upload are compatible with the server.</p>
+    
+                <p>Note: The server will automatically delete the uploaded files after 30 days.</p>
+    
+                <p>To download files, click on the links provided in the available downloads section.</p>
+    
+                <p>To upload new files, click on the "Upload Files" button below.</p>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
