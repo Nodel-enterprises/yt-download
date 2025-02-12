@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.lrkt-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('9s1umo/test');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT DOWNLOADER (beta)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="title">
+        <h1 id="header">YouTube / TikTok Downloader (BETA IN PROGRESS)</h1>
+    </div>
+
+    <div class="container">
+        <h2>YouTube Downloader</h2>
+        <input type="text" id="video-url" placeholder="Enter YouTube video URL" />
+        <button onclick="downloadVideo()">Download</button>
+        <div id="progress" style="display: none;">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <div class="container">
+        <p id="qualityselector"></p>
+        <p class="description">Welcome to the YouTube downloader home page!<br><br>Are you tired of not being able to download videos because of constant <span class="highlight">NSFW ads</span> and redirects?<br><br>Our user-friendly tool allows anyone to easily paste the URL of the YouTube video you want to download and select your preferred format. Once you've made your selection, click the download button, and your file will be saved to your device in no time.<br><br>Our fast servers also let you convert videos to different formats, extract audio, and enjoy fast download speeds. Whether you prefer MP4, AVI, or audio-only, we've got you covered.<br><br>Try our YouTube Downloader today and take control of your YouTube experience!</p>
+    </div>
+
+    <div class="container">
+        <span id="datetime-display"></span>
+        <img src="/img/youtube.png" alt="YouTube logo">
+    </div>
+
+    <div class="container">
+        <p>All files will be deleted from our server after 2 hours, so make sure to download your files before they get deleted!</p>
+        <button id="goUpBtn">Go to top</button>
+        <p>Support our development of the YouTube downloader and server hosting:</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="GURKA8DQXMQQ4" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_NO/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Created by <a href="https://github.com/Nodel-enterprises">Nodel Enterprises</a> 2024 ©</p>
+        <p>Server provided by <a href="http://phntmhosting.xyz">Phntm Hosting</a></p>
+    </div>
+
+    <script>
+        const datetimeDisplayElement = document.getElementById("datetime-display");
+        const currentDateTime = new Date();
+        const date = currentDateTime.toDateString();
+        datetimeDisplayElement.textContent = `Supported platforms as of: ${date}`;
+    </script>
+
+    <script src="bundle.js"></script>
+    <script src="scroll.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
