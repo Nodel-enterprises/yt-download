@@ -43,11 +43,6 @@ app.get('/download', async (req, res) => {
 });
 
 app.listen(port, () => {
-<<<<<<< HEAD
-  console.log(`Server listening at https//s1.phntmhosting.xyz:${port}`);
-});
-=======
   console.log(`Server listening at https://s1.phntmhosting.xyz:${port}`);
 });
 
->>>>>>> 9118678273d611edd680e671d8dbed3ae77aa613
