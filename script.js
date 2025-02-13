@@ -11,7 +11,7 @@ function downloadVideo() {
 
   messageEl.textContent = "Downloading...";
 
-  fetch('http://s1.phntmhosting.xyz:6909/download?url=' + encodeURIComponent(url))
+  fetch('http://localhost:6909/download?url=' + encodeURIComponent(url))
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
