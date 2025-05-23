@@ -2,40 +2,47 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const youtubedl = require('youtube-dl-exec');
-const logger = require('progress-estimator')();
+const path = require('path');
+const app = express();
 const port = 6909;
 
-app.use(cors()); 
-
-const app = express();
-const downloadProgress = {}; // Initialize download progress tracking
-
-app.use(express.static('downloads'));
+app.use(cors());
+app.use(express.static('downloads')); // Serves static files
 
 app.get('/download', async (req, res) => {
   const url = req.query.url;
-  const clientId = req.query.clientId;
 
   if (!url) {
     return res.status(400).send('URL is required');
   }
 
-  downloadProgress[clientId] = 0;
+  const filename = `video_${Date.now()}.mp4`;
+  const outputPath = path.join(__dirname, 'downloads', filename);
 
   try {
-    const filePath = `downloads/${url.split('/').pop()}_${Date.now()}.mp4`;
-
-    // Set up the download promise
-    const promise = youtubedl(url, {
-      output: filePath,
-      dumpSingleJson: true,
+    // Start downloading
+    await youtubedl(url, {
+      output: outputPath,
+      format: 'best[ext=mp4]', // Ensure it downloads video
+      noCheckCertificates: true,
+      noWarnings: true,
+      preferFreeFormats: true,
+      verbose: true
     });
 
-    // Log download progress
-    await logger(promise, `Obtaining URL: ${url}`);
+    // Check if file exists before responding
+    fs.access(outputPath, fs.constants.F_OK, (err) => {
+      if (err) {
+        console.error('File not found after download');
+        return res.status(500).send('Download failed');
+      }
 
-    // After download, send success response
-    res.send({ message: 'Download completed', filePath });
+      res.json({
+        message: 'Download completed',
+        file: filename,
+        url: `/` + filename // since served via express.static('downloads')
+      });
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred while downloading the file.');
@@ -43,6 +50,5 @@ app.get('/download', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening at https://s1.phntmhosting.xyz:${port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });
-

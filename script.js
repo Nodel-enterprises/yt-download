@@ -16,10 +16,10 @@ function downloadVideo() {
       if (!response.ok) {
         throw new Error('Network response was not ok: ' + response.statusText);
       }
-      return response.text();
+      return response.json();
     })
     .then(data => {
-      messageEl.textContent = data;
+      messageEl.innerHTML = `Download complete: <a href="${data.url}" download>Click here to download</a>`;
     })
     .catch(error => {
       messageEl.textContent = "Error: " + error.message;
