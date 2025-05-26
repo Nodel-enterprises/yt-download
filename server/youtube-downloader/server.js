@@ -20,6 +20,9 @@ app.get('/download', async (req, res) => {
   const outputPath = path.join(__dirname, 'downloads', filename);
 
   try {
+    console.log(`Downloading video from URL: ${url}`);
+    console.log(`Saving as: ${filename}`);
+
     // Start downloading
     await youtubedl(url, {
       output: outputPath,
@@ -29,6 +32,8 @@ app.get('/download', async (req, res) => {
       preferFreeFormats: true,
       verbose: true
     });
+
+    console.log(`Downloaded! Video saved as: ${filename}`);
 
     // Check if file exists before responding
     fs.access(outputPath, fs.constants.F_OK, (err) => {
@@ -40,7 +45,7 @@ app.get('/download', async (req, res) => {
       res.json({
         message: 'Download completed',
         file: filename,
-        url: `/` + filename // since served via express.static('downloads')
+        url: `/${filename}` // since served via express.static('downloads')
       });
     });
   } catch (err) {
