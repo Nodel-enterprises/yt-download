@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="https://cdn.lrkt-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('9s1umo/test');</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YT DOWNLOADER (beta)</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- LogRocket -->
+    <script src="https://cdn.lrkt-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.LogRocket && window.LogRocket.init('9s1umo/test');
+    </script>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Youtube Downloader" />
+    <meta property="og:description" content="This is a website for downloading YouTube videos without the annoying NSFW ads!" />
+    <meta property="og:url" content="https://phntm.cloud" />
+    <meta property="og:image" content="https://m.media-amazon.com/images/I/711++MJq8vL._UF1000,1000_QL80_.jpg" />
+    <meta name="theme-color" content="#43B581" data-react-helmet="true" />
+
+    <link rel="stylesheet" href="style.css" />
 </head>
-
-
-<meta content="Youtube Downloader" property="og:title" />
-<meta content="This is a website for downloading youtube videos without the annoying nsfw ads!" property="og:description" />
-<meta content="https://phntm.cloud" property="og:url" />
-<meta content="https://m.media-amazon.com/images/I/711++MJq8vL._UF1000,1000_QL80_.jpg" property="og:image" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
-
-
 <body>
     <div class="title">
-    <h1 id="header">Youtube / TikTok Downloader (BETA)</h1>
-
-</div>
+        <h1 id="header">Youtube / TikTok Downloader (BETA)</h1>
+    </div>
 
     <div class="container">
         <h1>YouTube Downloader</h1>
@@ -31,69 +32,66 @@
         <div id="progress" style="display: none;">
             <div id="progress-bar"></div>
         </div>
-
-
-
         <p id="message"></p>
     </div>
-    <div class="container"><span style="font-size: 13.3333px;"><br></span>
+
+    <div class="container">
         <p id="qualityselector"></p>
-        <strong><span style="color: rgb(108, 0, 255);">Welcome to the YouTube downloader home page!<br><br>Are you tired of not being able to download videos because of the constant </span><span style="color: rgb(184, 49, 47);">NSFW</span><span style="color: rgb(108, 0, 255);"> ads / redirects?<br><br>Our user-friendly allows anyone to easily insert paste the  URL of the YouTube video you want to download and select your preferred format. Once you&apos;ve made your selections, simply click the download button and your file will be saved to your device in no time. Thanks to our fast servers.<br><br>But that&apos;s not all - our YouTube Downloader also allows you to convert videos to different file formats, making it easy to watch your favorite content on your device. Whether you prefer MP4, AVI, or any other format, we got you covered.<br><br>in addition to downloading and converting videos, our YouTube Downloader also offers the option to extract audo from videos, allowing you to create your own music library with all your favorite Youtube tracks.<br><br>And with our fast download speeds, you won&apos;t have to wait long to enjoy your videos and music offline.<br><br>So why wait? Try our YouTube Downloader today and take control of your YouTube experience. Download, convert, and enjoy your favourite content on your terms.</span></strong></p>
+        <strong>
+            <span style="color: rgb(108, 0, 255);">
+                Welcome to the YouTube downloader home page!<br><br>
+                Are you tired of not being able to download videos because of constant 
+            </span>
+            <span style="color: rgb(184, 49, 47);">NSFW</span>
+            <span style="color: rgb(108, 0, 255);">
+                ads / redirects?<br><br>
+                Our user-friendly tool allows anyone to easily paste the URL of the YouTube video you want to download and select your preferred format. Once you've made your selections, simply click the download button and your file will be saved to your device in no time—thanks to our fast servers.<br><br>
+                But that's not all! Our YouTube Downloader also allows you to convert videos to different file formats, making it easy to watch your favorite content on any device. Whether you prefer MP4, AVI, or another format, we’ve got you covered.<br><br>
+                In addition to downloading and converting videos, our YouTube Downloader offers the option to extract audio from videos, allowing you to create your own music library with your favorite YouTube tracks.<br><br>
+                And with our fast download speeds, you won't have to wait long to enjoy your videos and music offline.<br><br>
+                So why wait? Try our YouTube Downloader today and take control of your YouTube experience. Download, convert, and enjoy your favorite content on your terms.
+            </span>
+        </strong>
     </div>
 
     <div class="container">
         <span id="datetime-display"></span>
-        <img src="/img/youtube.png" alt="">
-                </div>
+        <img src="/img/youtube.png" alt="YouTube logo" />
+    </div>
 
-                <div class="container">
-                    <p>All files will be deleted from our server after 2 hours, so make sure to download your files before they get deleted!</p>
-                    <button id="goUpBtn">Go to top</button>
-                    <p></p>
-                    <p>Support our development of youtube downloader and server hosting:</p>
+    <div class="container">
+        <p>All files will be deleted from our server after 2 hours, so make sure to download your files before they get deleted!</p>
+        <button id="goUpBtn">Go to top</button>
+        <p>Support our development of YouTube downloader and server hosting:</p>
 
-                    <form action="https://www.paypal.com/donate" method="post" target="_top">
-                        <input type="hidden" name="hosted_button_id" value="GURKA8DQXMQQ4" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_NO/i/scr/pixel.gif" width="1" height="1" />
-                        </form>
-                        
-                            </div>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="GURKA8DQXMQQ4" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_NO/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
 
-                            <script>
-                                // Function to display current date and time
-                                const datetimeDisplayElement = document.getElementById("datetime-display");
-                            
-                                // Create a new Date object
-                                const currentDateTime = new Date();
-                            
-                                // Extract the date and time components
-                                const date = currentDateTime.toDateString();
-                                const time = currentDateTime.toLocaleTimeString();
-                            
-                                // Display the date and time in the span element
-                                datetimeDisplayElement.textContent = `supported platforms as of:  ${date}`;
-                            </script>
+    <footer class="footer copyright-box">
+        <p>
+            Created by 
+            <a href="https://github.com/Nodel-enterprises" target="_blank" rel="noopener noreferrer">github.com/Nodel-enterprises</a> 
+            &copy; <script>document.write(new Date().getFullYear())</script>.
+        </p>
+        <p>
+            Server provided by 
+            <a href="http://phntmhosting.xyz" target="_blank" rel="noopener noreferrer">phntmhosting.xyz</a>
+        </p>
+    </footer>
 
-                            
     <script src="bundle.js"></script>
     <script src="scroll.js"></script>
-    <p><br></p>
-
-    
-<div class="error-message">
-<footer class="footer copyright-box">
-  <p>
-    Created by <a href="https://github.com/Nodel-enterprises" target="_blank" rel="noopener noreferrer">github.com/Nodel-enterprises</a> &copy; <script>document.write(new Date().getFullYear())</script>.
-  </p>
-  <p>
-    Server provided by <a href="http://phntmhosting.xyz" target="_blank" rel="noopener noreferrer">phntmhosting.xyz</a>
-  </p>
-</footer>
-
-</body>
-
-
-
     <script src="script.js"></script>
+    <script>
+        // Display current date and time
+        const datetimeDisplayElement = document.getElementById("datetime-display");
+        const currentDateTime = new Date();
+        const date = currentDateTime.toDateString();
+        datetimeDisplayElement.textContent = `Supported platforms as of: ${date}`;
+    </script>
+</body>
 </html>
